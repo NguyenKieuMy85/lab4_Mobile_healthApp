@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.wear.widget.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:padding="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="8dp">
+
+        <!-- ⏱ Timer Row -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="12dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⏱"
+                android:textSize="24sp"
+                android:textColor="@android:color/white"
+                android:layout_marginEnd="6dp"/>
+            <TextView
+                android:id="@+id/timer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00"
+                android:textSize="24sp"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <!-- ❤️ Heart Rate Row -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="8dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="❤️"
+                android:textSize="22sp"
+                android:textColor="@android:color/white"
+                android:layout_marginEnd="6dp"/>
+            <TextView
+                android:id="@+id/heartRate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-- bpm"
+                android:textSize="20sp"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <!-- 🔥 Calories Row -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="16dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🔥"
+                android:textSize="22sp"
+                android:textColor="@android:color/white"
+                android:layout_marginEnd="6dp"/>
+            <TextView
+                android:id="@+id/calories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-- kcal"
+                android:textSize="20sp"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <!-- Buttons -->
+        <Button
+            android:id="@+id/startButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="START" />
+
+        <Button
+            android:id="@+id/pauseButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PAUSE"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+</androidx.wear.widget.BoxInsetLayout>
