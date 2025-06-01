@@ -1,98 +1,104 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.wear.widget.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
-    android:padding="8dp">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#212121"
+    android:padding="16dp">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:padding="8dp">
+        android:layout_height="match_parent">
 
-        <!-- ⏱ Timer Row -->
-        <LinearLayout
+        <!-- ⏱ Timer -->
+        <TextView
+            android:id="@+id/timer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginBottom="12dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="⏱"
-                android:textSize="24sp"
-                android:textColor="@android:color/white"
-                android:layout_marginEnd="6dp"/>
-            <TextView
-                android:id="@+id/timer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="00:00"
-                android:textSize="24sp"
-                android:textColor="@android:color/white" />
-        </LinearLayout>
+            android:text="00:00"
+            android:textSize="32sp"
+            android:textColor="@android:color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="20dp"/>
 
-        <!-- ❤️ Heart Rate Row -->
-        <LinearLayout
+        <!-- ❤️ Heart Rate -->
+        <TextView
+            android:id="@+id/heartRate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginBottom="8dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="❤️"
-                android:textSize="22sp"
-                android:textColor="@android:color/white"
-                android:layout_marginEnd="6dp"/>
-            <TextView
-                android:id="@+id/heartRate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="-- bpm"
-                android:textSize="20sp"
-                android:textColor="@android:color/white" />
-        </LinearLayout>
+            android:text="❤️ -- bpm"
+            android:textSize="22sp"
+            android:textColor="@android:color/white"
+            app:layout_constraintTop_toBottomOf="@+id/timer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="16dp"/>
 
-        <!-- 🔥 Calories Row -->
-        <LinearLayout
+        <!-- 🔥 Calories -->
+        <TextView
+            android:id="@+id/calories"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginBottom="16dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="🔥"
-                android:textSize="22sp"
-                android:textColor="@android:color/white"
-                android:layout_marginEnd="6dp"/>
-            <TextView
-                android:id="@+id/calories"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="-- kcal"
-                android:textSize="20sp"
-                android:textColor="@android:color/white" />
-        </LinearLayout>
+            android:text="🔥 -- kcal"
+            android:textSize="22sp"
+            android:textColor="@android:color/white"
+            app:layout_constraintTop_toBottomOf="@+id/heartRate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="16dp"/>
 
-        <!-- Buttons -->
+        <!-- Steps -->
+        <TextView
+            android:id="@+id/steps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Steps: --"
+            android:textSize="20sp"
+            android:textColor="@android:color/white"
+            app:layout_constraintTop_toBottomOf="@+id/calories"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="32dp"/>
+
+        <!-- START Button -->
         <Button
             android:id="@+id/startButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="START" />
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:text="START"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@+id/steps"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_percent="0.8"
+            android:layout_marginTop="20dp"/>
 
+        <!-- PAUSE Button -->
         <Button
             android:id="@+id/pauseButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
             android:text="PAUSE"
-            android:layout_marginTop="8dp" />
-    </LinearLayout>
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@+id/startButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_percent="0.8"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Motivational Message -->
+        <TextView
+            android:id="@+id/motivationalMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Keep going!"
+            android:textSize="16sp"
+            android:textColor="@android:color/white"
+            app:layout_constraintTop_toBottomOf="@+id/pauseButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.wear.widget.BoxInsetLayout>

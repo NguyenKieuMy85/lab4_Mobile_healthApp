@@ -11,6 +11,7 @@ coreSplashscreen = "1.0.1"
 wear = "1.3.0"
 litertApi = "1.2.0"
 playServicesFitness = "21.2.0"
+constraintlayout = "2.2.1"
 
 [libraries]
 play-services-wearable = { group = "com.google.android.gms", name = "play-services-wearable", version.ref = "playServicesWearable" }
@@ -29,6 +30,7 @@ core-splashscreen = { group = "androidx.core", name = "core-splashscreen", versi
 wear = { group = "androidx.wear", name = "wear", version.ref = "wear" }
 litert-api = { group = "com.google.ai.edge.litert", name = "litert-api", version.ref = "litertApi" }
 play-services-fitness = { group = "com.google.android.gms", name = "play-services-fitness", version.ref = "playServicesFitness" }
+constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

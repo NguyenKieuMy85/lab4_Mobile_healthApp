@@ -1,8 +1,32 @@
 <resources>
-
+    <!-- Splash Screen Theme -->
     <style name="MainActivityTheme.Starting" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@android:color/black</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_icon</item>
-        <item name="postSplashScreenTheme">@android:style/Theme.DeviceDefault</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_icons</item>
+        <item name="postSplashScreenTheme">@style/Theme.AppCompat</item>
+    </style>
+
+    <!-- Wear OS Button Style -->
+    <style name="WearButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="cornerRadius">8dp</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!-- Custom style for Start Button -->
+    <style name="WearButton.Start" parent="WearButton">
+        <item name="backgroundTint">@color/green</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <!-- Custom style for Pause Button -->
+    <style name="WearButton.Pause" parent="WearButton">
+        <item name="backgroundTint">@color/orange</item>
+        <item name="android:textColor">@android:color/white</item>
     </style>
 </resources>
